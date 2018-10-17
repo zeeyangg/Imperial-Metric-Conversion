@@ -1,0 +1,50 @@
+{
+
+  "description": "Auto page translate from American to International System of units",
+    "author":"Milos Paripovic",
+  "manifest_version": 2,
+  "name": "Everything Metric - Auto Unit Converter",
+  "version": "2.3",
+  "icons": {
+    "48": "icons/globe-icon.svg",
+    "96": "icons/globe-icon.svg",
+    "128": "icons/globe-icon.svg"
+  },
+  "permissions": [
+      "tabs",
+      "storage"
+  ],
+    
+  "browser_action": {
+  "default_icon": {
+    "19": "icons/globe-icon.svg",
+    "38": "icons/globe-icon.svg",
+    "48": "icons/globe-icon.svg",
+    "128": "icons/globe-icon.svg"
+  },
+  "default_title": "Automatic Metric/SI conversion"
+},
+    "background": {
+    "scripts": ["background.js"]
+},
+    
+"content_scripts":
+  [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["contentscriptmin.js"],
+      "run_at": "document_start"
+    }
+  ],
+   "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  }   ,
+    
+  "applications": {
+  "gecko": {
+    "id": "{ffd50a6d-1702-4d87-83c3-ec468f67de6a}",
+    "strict_min_version": "42.0"
+      }
+    }
+}
