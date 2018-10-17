@@ -1,0 +1,92 @@
+Manifest-Version: 1.0
+
+Name: background.js
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: AEBwTQuJXL8zLGF1kbaZHA==
+SHA1-Digest: DUvFFwOmwGXxbobUTUSLoP7qXEA=
+SHA256-Digest: hZWjYA/dHtkVVKv8GFyG4b0E/V4BeGqIIU29LjSZ0n0=
+
+Name: contentscriptmin.js
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: KYZaoT1abMM003NT9K4CnA==
+SHA1-Digest: V8Qcrz/SO02oR2bjmYkKiomMXwc=
+SHA256-Digest: Imi/BLOiykEMQOU0GRyC0NVWQfaEgVtWuuOnT23b7ag=
+
+Name: manifest.json
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: zmExWGa+bEip45Q/tLWefw==
+SHA1-Digest: zdxlb+w2tDFAHshDRaLqjoWlm5Y=
+SHA256-Digest: V+x4pTMW9rTAwBrVJmGdkFeW4vag6GfT1KGrFAOvbAU=
+
+Name: options.html
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: CKMQJJk6RXXqNzgFJDc0aA==
+SHA1-Digest: DYNxNG/tzlVC8FpAfBIMYA2OYUw=
+SHA256-Digest: 2W1FddkfEUHyC8ormvUcvd4nW8VfaOEEMVPG/F9nX/Y=
+
+Name: options.js
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: 01RD0UNNQPMyjxvdwtaQxg==
+SHA1-Digest: BXW2WSXdc+p+rhLHye6X5ialgL0=
+SHA256-Digest: WHj0QFlfWlqK9Z3s5pKrkup1NSouhYkxwH/zUMq5i2E=
+
+Name: icons/everything-metric-128-off.png
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: NQnPnF/sgdaACr/vmret8g==
+SHA1-Digest: AP1n1IccKNO8yw2MWJhRirN7ZxQ=
+SHA256-Digest: jMJUV2nKCm9OrTskhFOLY6nh54yJLJPqOoGM9ZDbZ6Q=
+
+Name: icons/everything-metric-128.png
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: ExLPVk3Yzoz9SPwYPUBtYw==
+SHA1-Digest: tsr5FDO1KcKI/ZkhTGN2v6isiCk=
+SHA256-Digest: ploqs9j2HT2dBr0lYEa6TWoPJ6/BmKpaIEuSKZVuwsM=
+
+Name: icons/everything-metric-16-off.png
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: MXIRVrvzga/1Csmh1U8kmg==
+SHA1-Digest: aku/tUzJDfPiQuC9t1n7eNlL72M=
+SHA256-Digest: nirzlxIQUNM7OUJK7NAMgMDrRFd2Ds86WvSRwTRR56E=
+
+Name: icons/everything-metric-16.png
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: 41iaam/U9+LXwWGUic2UUQ==
+SHA1-Digest: 8Qu7pD6I4+clTolnWP/iXYZzdEI=
+SHA256-Digest: 8SWw4UKHPpOJwX3YUbLnsHws+QwRj14UDGxYq/C5PnU=
+
+Name: icons/everything-metric-32-off.png
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: gyXDje1EJzzZ+otcAhWy6g==
+SHA1-Digest: XJ/g2PJxmQtyeaVaGEDCo/JEmlI=
+SHA256-Digest: bJcQjrTStgbrgORrQZBu8U6k7gLIiTIsz7RL8eeGCKQ=
+
+Name: icons/everything-metric-32.png
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: TFV9T63cqgpo8rLJyM7gJw==
+SHA1-Digest: CnClso7T7TF9kZ7j4VH+dTcNHjI=
+SHA256-Digest: PRfPjplh0b1INnRauu//NtD0MEoXpX2g3C4F5nOSqOo=
+
+Name: icons/everything-metric-48-off.png
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: mgOyucStj2Gcl75q5EeUwQ==
+SHA1-Digest: dxQrupUFda242YlsXLDEy8twf5w=
+SHA256-Digest: M5pZRHSOh3jGa5OBOlgObzoXhIagDJyE2SUP3yQB3oY=
+
+Name: icons/everything-metric-48.png
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: Cn0Uo8qNAn2NWZbcbKVRXw==
+SHA1-Digest: aSi9wxVtpz6Okz4LTs+PUyfliBc=
+SHA256-Digest: 1E3jqtOsxPRZmkgbyFhvcz9/PM38I7HjwjgsRG7ZWwc=
+
+Name: icons/globe-icon-off.svg
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: LTmT9JDeb0HCfB4DnZw/Ig==
+SHA1-Digest: uEeKfcQwJorDUXeow0rT0hIC+jk=
+SHA256-Digest: toZdef8gP298TiAT13kfMH1a16+xyERvfzUOqsfBpXE=
+
+Name: icons/globe-icon.svg
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: WJNdxYU3HZfLkA6iPdGHkw==
+SHA1-Digest: 1mUbIaotSzSyN9fX0HsNNsq4rCk=
+SHA256-Digest: RvVAJIKlBD83qw9SbYAoolNS81bSi3WAc3B/Wcvy5Tg=
+

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Everything Metric - Options</title>
+  <style>
+      *: { margin: 5px; }
+    body: { padding: 10px; font-size: 2em;  }
+  </style>
+</head>
+
+<body>
+ 
+    <p>If this add-on doesn't work correctly on a certain page, please send me an <strong>email</strong> with the link (<a href="mailto:metric@milosparipovic.com">metric@milosparipovic.com</a>)</p>
+
+  <label>
+      <input type="checkbox" id="useComma">
+      <strong>Use Comma</strong> instead of Dot for decimals <br />(1.5 m > 1,5 m)<br />
+    </label>
+    <br/>
+
+      
+   <label>
+      <input type="checkbox" id="useSpaces">
+      Use <strong>Space for thousand </strong> separator <br />(123.456,789 m > 123 456,789 m)<br />
+    </label>
+    <br/>
+ 
+<label>   
+    <input type="checkbox" id="useMM">
+    Prefer <strong>mm and g</strong> instead of <strong>cm and kg</strong> <br />(29.7 cm > 297 mm)<br /> 
+  </label>
+<br/>
+    
+     <label>
+    <input type="checkbox" id="useGiga">
+    Use <strong>Mega and Giga</strong> for large units <br />(2000 km > 2Mm) <br />
+  </label>
+<br/>
+    
+  <label>
+    <input type="checkbox" id="useRounding">
+    <strong>Round numbers</strong> if less than 3% of error <br />(55.11 cm > 55 cm)<br />
+  </label>
+    <br/>
+    <label>
+    <input type="checkbox" id="useMO">
+    Continue running after 1st pass <br />(if page changes, apply to new content also)*<br />
+  </label>
+    
+  <br/>
+      <button id="save" style="margin-top: 10px; margin-bottom: 10px; width: 100px; text-align: center;">Save</button>
+
+ <p>* The last option can make browsing <strong>slower</strong> and it may trigger changes while typing text</p>
+  <div id="status" style="color:seagreen"></div>
+  
+ 
+  <script src="options.js"></script>
+</body>
+</html>
