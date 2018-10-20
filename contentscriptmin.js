@@ -201,7 +201,7 @@ function convAndForm(a, b, c) {
         let k = stepUpOrDown(h, e);
         h = roundNicely(k.met), e = k.unit
     }
-    return 100 === h && 'cm' === e && !1 === useMM ? (h = 1, e = 'm') : 1e3 == h && 'mm' == e && !0 == useMM && (h = 1, e = 'm'), h = replaceWithComma(h), ' (' + h + ' ' + e + c + ')\u02DC '
+    return 100 === h && 'cm' === e && !1 === useMM ? (h = 1, e = 'm') : 1e3 == h && 'mm' == e && !0 == useMM && (h = 1, e = 'm'), h = replaceWithComma(h), ' (' + h + ' ' + e + c + ') '
 }
 
 function convert(a, b, c) {
@@ -250,7 +250,7 @@ function amIn(a) {
                 k = replaceWithComma(roundNicely(c[4] * e)),
                 l = replaceWithComma(roundNicely(c[6] * e));
             const m = c.index + d.length,
-                n = '(' + h + ' x ' + k + ' x ' + l + g + ')\u02DC' + c[c.length - 1];
+                n = '(' + h + ' x ' + k + ' x ' + l + g + ')' + c[c.length - 1];
             a = a.replace(c[0], n)
         } catch (d) {}
     return a
@@ -267,7 +267,7 @@ function rectIn(a) {
             let h = replaceWithComma(roundNicely(c[2] * e)),
                 k = replaceWithComma(roundNicely(c[4] * e));
             const l = c.index + d.length,
-                m = '(' + h + ' x ' + k + g + ')\u02DC' + c[c.length - 1];
+                m = '(' + h + ' x ' + k + g + ')' + c[c.length - 1];
             a = a.replace(c[0], m)
         } catch (d) {}
     return a
@@ -282,7 +282,7 @@ function rectFt2(a) {
                 h = replaceWithComma(roundNicely(c[2] * e)),
                 k = replaceWithComma(roundNicely(c[4] * e));
             const l = c.index + d.length,
-                m = '(' + h + ' x ' + k + ' m' + ')\u02DC' + c[c.length - 1];
+                m = '(' + h + ' x ' + k + ' m' + ')' + c[c.length - 1];
             a = a.replace(c[0], m)
         } catch (d) {}
     return a
@@ -297,7 +297,7 @@ function rectFt(a) {
                 h = replaceWithComma(roundNicely(c[2] * e)),
                 k = replaceWithComma(roundNicely(c[3] * e));
             const l = c.index + d.length,
-                m = '(' + h + ' x ' + k + ' m' + ')\u02DC' + c[c.length - 1];
+                m = '(' + h + ' x ' + k + ' m' + ')' + c[c.length - 1];
             a = a.replace(c[0], m)
         } catch (d) {}
     return a
@@ -349,7 +349,7 @@ function ftin2m(a) {
             let k = 0;
             var c = /yd/i;
             c.test(d[3]) && (g *= 3), k = 12 * g + h;
-            let l = '(' + replaceWithComma(roundNicely(0.0254 * k)) + ' m)\u02DC';
+            let l = '(' + replaceWithComma(roundNicely(0.0254 * k)) + ' m)';
             a = a.replace(d[0], l)
         } catch (e) {}
     return a
