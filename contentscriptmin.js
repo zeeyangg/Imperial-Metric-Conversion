@@ -112,7 +112,24 @@ const intOrFloat = '([0-9,.]+)',
         regex: /(([0-9,.]+)[  ]?mpgs?)( [(][0-9])?([^a-z]|$)/ig,
         unit: 'L/100km',
         multiplier: 0.425
-    }];
+    }, {
+        regex: /(([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?[  ]?(tonnes|ton)s?( [(][0-9])?([^a-z]|$))/ig,
+        unit: 'kg',
+        unit2: 'g',
+        multiplier: 907.185,
+        multiplier2: 907185,
+    }, {
+        regex: /(([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?[  ]?(tbsp|tablespoon)s?( [(][0-9])?([^a-z]|$))/ig,
+        unit: 'ml',
+        multiplier: 14.7868,        
+    }, {
+        regex: /(([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?[  ]?(tsp|teaspoon)s?( [(][0-9])?([^a-z]|$))/ig,
+        unit: 'ml',
+        multiplier: 4.92892,
+    }
+    
+
+];
 
 function walk(a) {
     let b, c;
@@ -381,4 +398,4 @@ function initMO(a) {
     (function() {
         b.takeRecords(), b.observe(a, c)
     })()
-}
+}``
