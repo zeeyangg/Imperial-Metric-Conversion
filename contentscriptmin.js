@@ -32,7 +32,7 @@ void browser.runtime.sendMessage({
             sqcu = '([-\u2212 \xA0]?(sq.?|square|cu.?|cubic))?',
             sq = '([-\u2212 \xA0]?(sq.?|square))?',
             units = [{
-                regex: /(([0-9,.]+)[  ]?(°|º|deg(rees)?)[  ]?F(ahrenheits?)?( [(][0-9])?([^a-z]|$))/ig,
+                regex: /((-?[0-9,.]+)[  ]?(°|º|deg(rees)?)[  ]?F(ahrenheits?)?( [(][0-9])?([^a-z]|$))/ig,
                 unit: '\xB0C',
                 multiplier: 1
             }, {
@@ -145,7 +145,7 @@ void browser.runtime.sendMessage({
             for (let d = 0; d < b; d++)
                 if (-1 !== a.search(units[d].regex))
                     for (let e; null !== (e = units[d].regex.exec(a));) try {
-                        if (void 0 !== e[2] && !1 === /(?:^|\s)(\d*\.?\d+|\d{1,3}(?:,\d{3})*(?:\.\d+)?)(?!\S)/g.test(e[2])) continue;
+                        if (void 0 !== e[2] && !1 === /(?:^-|\s)(\d*\.?\d+|\d{1,3}(?:,\d{3})*(?:\.\d+)?)(?!\S)/g.test(e[2])) continue;
                         let g = 0;
                         if (1 == d) {
                             if (/[a-z#$€£]/i.test(e[1].substring(0, 1))) continue;
@@ -421,7 +421,7 @@ void browser.runtime.sendMessage({
             sqcu = '([-\u2212 \xA0]?(sq.?|square|cu.?|cubic))?',
             sq = '([-\u2212 \xA0]?(sq.?|square))?',
             units = [{
-                regex: /(([0-9,.]+)[  ]?(°|º|deg(rees)?)[  ]?C(elsius?)?( [(][0-9])?([^a-z]|$))/ig,
+                regex: /((-?[0-9,.]+)[  ]?(°|º|deg(rees)?)[  ]?C(elsius?)?( [(][0-9])?([^a-z]|$))/ig,
                 unit: '\xB0F',
                 multiplier: 1
             }, {
@@ -502,7 +502,7 @@ void browser.runtime.sendMessage({
             for (let d = 0; d < b; d++)
                 if (-1 !== a.search(units[d].regex))
                     for (let e; null !== (e = units[d].regex.exec(a));) try {
-                        if (void 0 !== e[2] && !1 === /(?:^|\s)(\d*\.?\d+|\d{1,3}(?:,\d{3})*(?:\.\d+)?)(?!\S)/g.test(e[2])) continue;
+                        if (void 0 !== e[2] && !1 === /(?:^-|\s)(\d*\.?\d+|\d{1,3}(?:,\d{3})*(?:\.\d+)?)(?!\S)/g.test(e[2])) continue;
                         let g = 0;
                         if (1 == d) {
                             if (/[a-z#$€£]/i.test(e[1].substring(0, 1))) continue;
