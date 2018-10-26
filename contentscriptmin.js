@@ -145,7 +145,7 @@ void browser.runtime.sendMessage({
             for (let d = 0; d < b; d++)
                 if (-1 !== a.search(units[d].regex))
                     for (let e; null !== (e = units[d].regex.exec(a));) try {
-                        if (void 0 !== e[2] && !1 === /(?:^-|\s)(\d*\.?\d+|\d{1,3}(?:,\d{3})*(?:\.\d+)?)(?!\S)/g.test(e[2])) continue;
+                        if (void 0 !== e[2] && !1 === /(?:^-?|\s)(\d*\.?\d+|\d{1,3}(?:,\d{3})*(?:\.\d+)?)(?!\S)/g.test(e[2])) continue;
                         let g = 0;
                         if (1 == d) {
                             if (/[a-z#$€£]/i.test(e[1].substring(0, 1))) continue;
@@ -502,7 +502,7 @@ void browser.runtime.sendMessage({
             for (let d = 0; d < b; d++)
                 if (-1 !== a.search(units[d].regex))
                     for (let e; null !== (e = units[d].regex.exec(a));) try {
-                        if (void 0 !== e[2] && !1 === /(?:^-|\s)(\d*\.?\d+|\d{1,3}(?:,\d{3})*(?:\.\d+)?)(?!\S)/g.test(e[2])) continue;
+                        if (void 0 !== e[2] && !1 === /(?:^-?|\s)(\d*\.?\d+|\d{1,3}(?:,\d{3})*(?:\.\d+)?)(?!\S)/g.test(e[2])) continue;
                         let g = 0;
                         if (1 == d) {
                             if (/[a-z#$€£]/i.test(e[1].substring(0, 1))) continue;
