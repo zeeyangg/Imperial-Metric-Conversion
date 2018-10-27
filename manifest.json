@@ -36,11 +36,7 @@
       "run_at": "document_start"
     }
   ],
-   "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  }   ,
-  
+
   "applications": {
   "gecko": {
     "id": "{ffd50a6d-1702-4d87-83c3-ec468f67de6a}",
