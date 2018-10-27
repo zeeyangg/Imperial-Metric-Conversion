@@ -75,7 +75,7 @@ browser.runtime.onMessage.addListener(
 function restore_options() {
   //  console.log("restoring options");
   browser.storage.sync.get({
-  useComma:true,
+  useComma:false,
   useMM:false,
   useRounding:true,
   isFirstRun:true,

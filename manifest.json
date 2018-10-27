@@ -36,7 +36,7 @@
       "run_at": "document_start"
     }
   ],
-    
+
   "applications": {
   "gecko": {
     "id": "{ffd50a6d-1702-4d87-83c3-ec468f67de6a}",
