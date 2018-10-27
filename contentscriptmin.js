@@ -425,35 +425,29 @@ void browser.runtime.sendMessage({
                 unit: '\xB0F',
                 multiplier: 1
             }, {
-                regex: /([a-z#$€£]?([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?([-−  ]?(sq.?|square|cu.?|cubic))?[-−  ]?in(ch|ches|²|³)?( [(]?[0-9]| [a-z]+)?([^a-z]|$))/ig,
-                unit: 'cm',
-                unit2: 'mm',
-                multiplier: 2.54,
-                multiplier2: 25.4,
-                multipliercu: 0.0163871,
+                regex: /([a-z#$€£]?([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?([-−  ]?(sq.?|square|cu.?|cubic))?[-−  ]?m(eters?|etres?|²|³)?( [(]?[0-9]| [a-z]+)?([^a-z]|$))/ig,
+                unit: 'foot',
+                multiplier: 3.28084,
+                multipliercu: 264.172,
                 fullround: !0
             }, {
 				regex: /(([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?[  ]?(m|meters?|metres?)( [(][0-9])?([^a-z]|$))/ig,
                 unit: 'foot',
                 multiplier: 3.28084
             }, {
-                regex: /(([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?([-−  ]?(sq.?|square|cu.?|cubic))?[-−  ]?(feet|foot|ft)(²|³)?( [(][0-9])?([^a-z]|$))/ig,
-                unit: 'm',
-                multiplier: 0.3048,
-                multipliercu: 28.31690879986443
+                regex: /(([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?([-−  ]?(sq.?|square|cu.?|cubic))?[-−  ]?(centimetres?|centimeters?|cm)(²|³)?( [(][0-9])?([^a-z]|$))/ig,
+				unit: 'inch',
+                multiplier: 0.393701,
+                multipliercu: 0.000264172
             }, {
-                regex: /(([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?([-−  ]?(sq.?|square))?[  ]?(mi|miles?)(²|³)?( [(][0-9])?([^a-z]|$))/ig,
-                unit: 'km',
-                multiplier: 1.60934,
+				regex: /(([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?([-−  ]?(sq.?|square))?[  ]?(km|kilometers?|kilometres?)(²|³)?( [(][0-9])?([^a-z]|$))/ig,
+                unit: 'mile',
+                multiplier: 0.621371,
                 fullround: !0
             }, {
-                regex: /(([.,0-9]+(?![\/⁄]))?[-−  ]?([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|[0-9]+[\/⁄][0-9]+)?([-−  ]?(sq.?|square))?[  ]?(yards?|yd)(²|³)?( [(][0-9])?([^a-z]|$))/ig,
-                unit: 'm',
-                multiplier: 0.9144
-            }, {
-                regex: /(([0-9,.]+)[  ]?mph)( [(][0-9])?([^a-z]|$)/ig,
-                unit: 'km/h',
-                multiplier: 1.60934,
+                regex: /(([0-9,.]+)[  ]?(km\/h|kmh|kph))( [(][0-9])?([^a-z]|$)/ig,
+                unit: 'mph',
+                multiplier: 0.621371,
                 fullround: !0,
                 forceround: !0
             }, {
@@ -558,7 +552,7 @@ void browser.runtime.sendMessage({
             var h;
             if (0 === b) h = convertToF(a);
             else if ('\xB2' === c) h = convert(a, Math.pow(d, 2), g);
-            else if ('\xB3' === c) h = convert(a, units[b].multipliercu, g), e = 'L', c = '';
+            else if ('\xB3' === c) h = convert(a, units[b].multipliercu, g), e = 'gallon', c = '';
             else {
                 h = convert(a, d, g);
                 let k = stepUpOrDown(h, e);
