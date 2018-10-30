@@ -502,7 +502,7 @@ void browser.runtime.sendMessage({
 
         function procNode(a) {
             let b = a.nodeValue;
-            b.startsWith('{') || (b = qIn(b), b = amIn(b), b = rectIn(b), b = rectFt(b), b = rectFt2(b), b = ftin2m(b), b = sim(b), a.nodeValue = b)
+            b.startsWith('{') || (b = amIn(b), b = rectIn(b), b = rectFt(b), b = sim(b), a.nodeValue = b)
         }
 
         function sim(a) {
@@ -610,12 +610,12 @@ void browser.runtime.sendMessage({
         }
 
         function amIn(a) {
-            let b = /(([0-9]+(.[0-9]+)?)[  ]?[x|*][  ]?([0-9]+(.[0-9]+)?)[  ]?[x|*][  ]?([0-9]+(.[0-9]+)?)[  ]?in(ch|ches|.)?)([^a-zA-Z]|$)/ig;
+            let b = /(([0-9]+(.[0-9]+)?)[  ]?[x|*][  ]?([0-9]+(.[0-9]+)?)[  ]?[x|*][  ]?([0-9]+(.[0-9]+)?)[  ]?(centimetres?|centimeters?|cm))([^a-zA-Z]|$)/ig;
             if (-1 !== a.search(b))
                 for (let c; null !== (c = b.exec(a));) try {
                     const d = c[1];
-                    let e = 2.54,
-                        g = ' cm';
+                    let e = 0.393701,
+                        g = ' inch';
                     !0 === useMM && (e = 25.4, g = ' mm');
                     let h = replaceWithComma(roundNicely(c[2] * e)),
                         k = replaceWithComma(roundNicely(c[4] * e)),
@@ -628,12 +628,12 @@ void browser.runtime.sendMessage({
         }
 
         function rectIn(a) {
-            let b = /(([0-9]+(.[0-9]+)?)[-−  ]?[x|*|×][-−  ]?([0-9]+(.[0-9]+)?)[-−  ]?in(ch|ches|.)?)([^a-zA-Z]|$)/ig;
+            let b = /(([0-9]+(.[0-9]+)?)[-−  ]?[x|*|×][-−  ]?([0-9]+(.[0-9]+)?)[-−  ]?(centimetres?|centimeters?|cm))([^a-zA-Z]|$)/ig;
             if (-1 !== a.search(b))
                 for (let c; null !== (c = b.exec(a));) try {
                     const d = c[1];
-                    let e = 2.54,
-                        g = ' cm';
+                    let e = 0.393701,
+                        g = ' inch';
                     !0 === useMM && (e = 25.4, g = ' mm');
                     let h = replaceWithComma(roundNicely(c[2] * e)),
                         k = replaceWithComma(roundNicely(c[4] * e));
@@ -644,31 +644,16 @@ void browser.runtime.sendMessage({
             return a
         }
 
-        function rectFt2(a) {
-            let b = /(([0-9]+(.[0-9]+)?)[-−  ]?[x|*|×][-−  ]?([0-9]+(.[0-9]+)?)[-−  ]?(feet|foot|ft))([^a-zA-Z]|$)/ig;
+        function rectFt(a) {
+            let b = /(([0-9]+(.[0-9]+)?)[-−  ]?[x|*|×][-−  ]?([0-9]+(.[0-9]+)?)[-−  ]?(m|meters?|metres?))([^a-zA-Z]|$)/ig;
             if (-1 !== a.search(b))
                 for (let c; null !== (c = b.exec(a));) try {
                     const d = c[1];
-                    let e = 0.3048,
+                    let e = 3.28084,
                         h = replaceWithComma(roundNicely(c[2] * e)),
                         k = replaceWithComma(roundNicely(c[4] * e));
                     const l = c.index + d.length,
-                        m = '(' + h + ' x ' + k + ' m' + ')' + c[c.length - 1];
-                    a = a.replace(c[0], m)
-                } catch (d) {}
-            return a
-        }
-
-        function rectFt(a) {
-            let b = /(([0-9]+)['′’][-−  ]?[x|*|×][-−  ]?([0-9]+)['′’])([^a-zA-Z]|$)/ig;
-            if (-1 !== a.search(b))
-                for (let c; null !== (c = b.exec(a));) try {
-                    const d = c[1];
-                    let e = 0.3048,
-                        h = replaceWithComma(roundNicely(c[2] * e)),
-                        k = replaceWithComma(roundNicely(c[3] * e));
-                    const l = c.index + d.length,
-                        m = '(' + h + ' x ' + k + ' m' + ')' + c[c.length - 1];
+                        m = '(' + h + ' x ' + k + ' foot' + ')' + c[c.length - 1];
                     a = a.replace(c[0], m)
                 } catch (d) {}
             return a
@@ -678,53 +663,7 @@ void browser.runtime.sendMessage({
             return /\d/.test(a)
         }
 
-        function qIn(a) {
-            for (let c, b = /([°|º]? ?(([0-9]{0,3})['’′][-−  ]?)?(([.0-9]+(?!\/)(.[0-9]+)?)?[-−  ]?([^ a-z,?.!]|[0-9]+[\/⁄][0-9]+)?)?("|″|”|“|’’|''|′′)( [(][0-9])?)/g, d = !1; null !== (c = b.exec(a));) try {
-                const e = c[1];
-                if (/“/.test(e)) {
-                    d = !0;
-                    continue
-                }
-                if (!hasNumber(e) && /[\"\″]/.test(e)) {
-                    d = !d;
-                    continue
-                }
-                if (!0 == d) {
-                    d = !1;
-                    continue
-                }
-                if (/[\(]/.test(c[9])) continue;
-                if (/[°|º]/.test(e)) continue;
-                let g = parseFloat(c[3]);
-                isNaN(g) && (g = 0);
-                let h = c[5];
-                if (/[⁄]/.test(c[5]) ? (c[7] = c[5], h = 0) : (h = parseFloat(h), isNaN(h) && (h = 0)), void 0 !== c[7] && (h += addFraction(c[7])), 0 === h || isNaN(h)) continue;
-                let k = g + h / 12,
-                    l = '';
-                l = 3 < k ? convAndForm(g + h / 12, 2, '') : convAndForm(12 * g + h, 1, '');
-                const m = c.index + e.length;
-                a = insertAt(a, l, m)
-            } catch (e) {}
-            return a
-        }
 
-        function ftin2m(a) {
-            let b = /(([0-9]{0,3}).?(ft|yd).?([0-9]+(.[0-9]+)?).?in(ch|ches)?)/g;
-            if (-1 !== a.search(b))
-                for (let d; null !== (d = b.exec(a));) try {
-                    d[0];
-                    let g = d[2];
-                    g = parseFloat(g);
-                    let h = d[4];
-                    h = parseFloat(h);
-                    let k = 0;
-                    var c = /yd/i;
-                    c.test(d[3]) && (g *= 3), k = 12 * g + h;
-                    let l = '(' + replaceWithComma(roundNicely(0.0254 * k)) + ' m)';
-                    a = a.replace(d[0], l)
-                } catch (e) {}
-            return a
-        }
         var useComma, useMM, useRounding, useMO, useGiga, useSpaces, isUK = !1;
         document.addEventListener('DOMContentLoaded', function() {
             var a = document.documentElement.outerHTML;
